@@ -1,0 +1,51 @@
+# HISN v1.0.0 — Docker Compose
+# Full stack with Ollama AI
+# Usage: docker-compose up -d
+
+version: "3.9"
+
+services:
+  hisn:
+    build: .
+    container_name: hisn
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./logs/samples:/app/logs/samples:ro
+      - hisn_db:/app
+    environment:
+      - OLLAMA_URL=http://ollama:11434/api/generate
+      - FLASK_ENV=production
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - hisn_network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: hisn_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - hisn_network
+    # For GPU acceleration, add:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  hisn_db:
+  ollama_models:
+
+networks:
+  hisn_network:
+    driver: bridge

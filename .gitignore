@@ -1,9 +1,85 @@
-venv/
+# ── Python ──────────────────────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+
+# ── Virtual Environments ─────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── HISN Sensitive Data (NEVER commit) ──────────────
+user_keys.json
+soc_copilot.db
+hisn.db
 *.db
-data/
-rules/
-reports/
-processed_files.json
 uploads_web/
+uploads_docs/
+uploads/
+
+# ── HISN Detection Data (large, downloaded on setup) ─
+data/enterprise-attack.json
+rules/sigma/
+
+# ── Reports & Investigation Output ──────────────────
+reports/
+*.pdf
+
+# ── Logs (processed) ─────────────────────────────────
+logs/*.evtx
+!logs/samples/
+
+# ── Environment & Secrets ────────────────────────────
+.env
+.env.local
+.env.production
+*.key
+*.pem
+secrets.json
+
+# ── IDEs ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Testing ──────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── Processed files ──────────────────────────────────
+processed_files.json
+
+# ── OS ───────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ── Node (if any tooling added later) ────────────────
+node_modules/
+npm-debug.log*
+.npm
+
+# ── Docker ───────────────────────────────────────────
+.dockerignore

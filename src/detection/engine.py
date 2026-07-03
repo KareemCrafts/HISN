@@ -105,6 +105,87 @@ BASELINE_RULES = [
         "confidence": 0.55,
         "condition": lambda data: not data.get("SubjectUserName", "").endswith("$"),
     },
+
+    # ── Sysmon-based rules (fire only on logs from Microsoft-Windows-Sysmon/Operational) ──
+    {
+        "event_id": "1",
+        "rule_name": "Suspicious PowerShell Execution (Encoded Command)",
+        "technique": "T1059.001",
+        "severity": "high",
+        "confidence": 0.75,
+        "condition": lambda data: "powershell" in data.get("Image", "").lower()
+            and any(flag in data.get("CommandLine", "").lower() for flag in ["-enc", "-encodedcommand", "-e jab", "frombase64string"]),
+    },
+    {
+        "event_id": "1",
+        "rule_name": "LOLBin Proxy Execution (mshta/regsvr32/rundll32)",
+        "technique": "T1218",
+        "severity": "high",
+        "confidence": 0.65,
+        "condition": lambda data: any(b in data.get("Image", "").lower() for b in ["mshta.exe", "regsvr32.exe", "rundll32.exe"])
+            and any(s in data.get("CommandLine", "").lower() for s in ["http://", "https://", "javascript:", "scrobj.dll"]),
+    },
+    {
+        "event_id": "1",
+        "rule_name": "Shadow Copy / Recovery Deletion",
+        "technique": "T1490",
+        "severity": "critical",
+        "confidence": 0.90,
+        "condition": lambda data: any(s in data.get("CommandLine", "").lower() for s in [
+            "vssadmin delete shadows", "wbadmin delete catalog", "bcdedit /set {default} recoveryenabled no"
+        ]),
+    },
+    {
+        "event_id": "1",
+        "rule_name": "Suspicious WMI Process Execution",
+        "technique": "T1047",
+        "severity": "high",
+        "confidence": 0.65,
+        "condition": lambda data: "wmic" in data.get("Image", "").lower()
+            and "process call create" in data.get("CommandLine", "").lower(),
+    },
+    {
+        "event_id": "8",
+        "rule_name": "Process Injection (CreateRemoteThread)",
+        "technique": "T1055",
+        "severity": "high",
+        "confidence": 0.80,
+    },
+    {
+        "event_id": "10",
+        "rule_name": "LSASS Memory Access (Possible Credential Dumping)",
+        "technique": "T1003.001",
+        "severity": "critical",
+        "confidence": 0.85,
+        "condition": lambda data: "lsass.exe" in data.get("TargetImage", "").lower(),
+    },
+    {
+        "event_id": "13",
+        "rule_name": "Registry Run Key Persistence",
+        "technique": "T1547.001",
+        "severity": "high",
+        "confidence": 0.70,
+        "condition": lambda data: any(p in data.get("TargetObject", "") for p in [
+            "\\Run\\", "\\RunOnce\\", "\\Winlogon\\Shell", "\\Winlogon\\Userinit"
+        ]),
+    },
+    {
+        "event_id": "13",
+        "rule_name": "Service Registry Modification (Persistence)",
+        "technique": "T1543.003",
+        "severity": "high",
+        "confidence": 0.70,
+        "condition": lambda data: "\\Services\\" in data.get("TargetObject", "") and "ImagePath" in data.get("TargetObject", ""),
+    },
+    {
+        "event_id": "11",
+        "rule_name": "Suspicious File Drop (Temp/Downloads)",
+        "technique": "T1105",
+        "severity": "low",
+        "confidence": 0.45,
+        "condition": lambda data: data.get("TargetFilename", "").lower().endswith((".exe", ".dll", ".ps1", ".vbs", ".bat"))
+            and any(p in data.get("TargetFilename", "").lower() for p in ["\\temp\\", "\\appdata\\local\\temp\\", "\\downloads\\"]),
+    },
 ]
 
 
