@@ -1,3 +1,13 @@
+import os as _os, sys as _sys
+_SIGMA = _os.path.join(_os.path.dirname(__file__), "rules", "sigma")
+_MITRE = _os.path.join(_os.path.dirname(__file__), "data", "enterprise-attack.json")
+_sigma_ok = _os.path.isdir(_SIGMA) and len(_os.listdir(_SIGMA)) > 100
+_mitre_ok = _os.path.isfile(_MITRE) and _os.path.getsize(_MITRE) > 10000
+def _already_setup(): return _sigma_ok and _mitre_ok
+if _already_setup():
+    print("[+] HISN: detection data already present, skipping download.")
+    _sys.exit(0)
+
 # setup_data.py
 # Downloads real MITRE ATT&CK STIX data and Sigma detection rules
 

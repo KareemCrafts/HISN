@@ -2719,7 +2719,7 @@ if __name__ == "__main__":
     _e = init_db()
     with Session(_e) as _s:
         _s.query(Alert).delete(); _s.query(Incident).delete(); _s.commit()
-    _port = int(_os.environ.get("FLASK_PORT", "5000"))
-    _host = _os.environ.get("FLASK_HOST", "127.0.0.1")
+    _port = int(_os.environ.get("PORT", _os.environ.get("FLASK_PORT", "5000")))
+    _host = _os.environ.get("FLASK_HOST", "0.0.0.0")
     _debug = _os.environ.get("FLASK_DEBUG", "false").lower() == "true"
     app.run(debug=_debug, host=_host, port=_port)

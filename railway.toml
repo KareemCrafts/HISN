@@ -1,12 +1,9 @@
 [build]
 builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt && python setup_data.py"
 
 [deploy]
-startCommand = "python -m src.dashboard.app"
-healthcheckPath = "/"
-healthcheckTimeout = 30
+startCommand = "gunicorn --bind 0.0.0.0:$PORT --timeout 120 --workers 1 --threads 4 src.dashboard.app:app"
+healthcheckPath = "/health"
+healthcheckTimeout = 60
 restartPolicyType = "on_failure"
-
-[env]
-FLASK_HOST = "0.0.0.0"
-FLASK_PORT = "8080"
