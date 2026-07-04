@@ -1,73 +1,90 @@
-# ── Python ──────────────────────────────────────────
+# ╔══════════════════════════════════════════════╗
+# ║  HISN .gitignore — Security-first            ║
+# ╚══════════════════════════════════════════════╝
+
+# ── CRITICAL: Secrets & API Keys ─────────────────────────────
+user_keys.json
+.env
+.env.local
+.env.production
+.env.staging
+*.key
+*.pem
+*.p12
+secrets.json
+credentials.json
+token.json
+config.local.py
+
+# ── HISN Runtime Data (local only) ───────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+soc_copilot.db
+hisn.db
+uploads_web/
+uploads_docs/
+uploads/
+reports/
+
+# ── HISN Large Detection Data (downloaded on setup) ──────────
+data/enterprise-attack.json
+rules/sigma/
+
+# ── Processed State ──────────────────────────────────────────
+processed_files.json
+sigma_dump.txt
+
+# ── Python ───────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyd
+*.pyo
+*.pyw
+.Python
 *.egg
 *.egg-info/
 dist/
 build/
 .eggs/
-.Python
-env/
-venv/
-.venv/
 pip-wheel-metadata/
+.installed.cfg
+*.spec
 
-# ── Virtual Environments ─────────────────────────────
+# ── Virtual Environments ─────────────────────────────────────
 venv/
 .venv/
 env/
 .env/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*/
 
-# ── HISN Sensitive Data (NEVER commit) ──────────────
-user_keys.json
-soc_copilot.db
-hisn.db
-*.db
-uploads_web/
-uploads_docs/
-uploads/
+# ── Testing & Coverage ───────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
 
-# ── HISN Detection Data (large, downloaded on setup) ─
-data/enterprise-attack.json
-rules/sigma/
-
-# ── Reports & Investigation Output ──────────────────
-reports/
-*.pdf
-
-# ── Logs (processed) ─────────────────────────────────
-logs/*.evtx
-!logs/samples/
-
-# ── Environment & Secrets ────────────────────────────
-.env
-.env.local
-.env.production
-*.key
-*.pem
-secrets.json
-
-# ── IDEs ─────────────────────────────────────────────
+# ── IDEs & Editors ───────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
-Thumbs.db
+.project
+.pydevproject
+*.sublime-project
+*.sublime-workspace
 
-# ── Testing ──────────────────────────────────────────
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-
-# ── Processed files ──────────────────────────────────
-processed_files.json
-
-# ── OS ───────────────────────────────────────────────
+# ── OS Files ─────────────────────────────────────────────────
 .DS_Store
 .DS_Store?
 ._*
@@ -75,11 +92,30 @@ processed_files.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
 
-# ── Node (if any tooling added later) ────────────────
-node_modules/
+# ── Logs ─────────────────────────────────────────────────────
+*.log
 npm-debug.log*
-.npm
 
-# ── Docker ───────────────────────────────────────────
+# ── Node (if tooling added later) ────────────────────────────
+node_modules/
+.npm
+.yarn-integrity
+
+# ── Docker ───────────────────────────────────────────────────
 .dockerignore
+
+# ── Git Security: catch common secret file names ─────────────
+*.secret
+*_secret*
+*secret*
+*password*
+*passwd*
+*credentials*
+*api_key*
+*apikey*
+!.env.example
+!.gitignore
+!requirements.txt
