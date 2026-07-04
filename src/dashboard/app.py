@@ -407,6 +407,12 @@ def add_security_headers(response):
     return response
 
 
+
+
+@app.route("/health")
+def health_check():
+    return jsonify({"status": "ok", "version": HISN_VERSION}), 200
+
 @app.route("/upload", methods=["POST"])
 def upload():
     if JOB["running"]:
