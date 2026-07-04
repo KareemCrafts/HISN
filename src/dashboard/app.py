@@ -1,5 +1,10 @@
 # src/dashboard/app.py
 import os, threading, time, json
+try:
+    from dotenv import load_dotenv
+    load_dotenv()  # loads .env in development; no-op in production
+except ImportError:
+    pass
 import yaml
 from urllib.parse import quote
 from flask import Flask, render_template_string, request, jsonify, Response
@@ -2709,8 +2714,12 @@ def dashboard():
 
 
 if __name__ == "__main__":
+    import os as _os
     # Clear previous session on every restart — fresh start each time
     _e = init_db()
     with Session(_e) as _s:
         _s.query(Alert).delete(); _s.query(Incident).delete(); _s.commit()
-    app.run(debug=False, port=5000)
+    _port = int(_os.environ.get("FLASK_PORT", "5000"))
+    _host = _os.environ.get("FLASK_HOST", "127.0.0.1")
+    _debug = _os.environ.get("FLASK_DEBUG", "false").lower() == "true"
+    app.run(debug=_debug, host=_host, port=_port)

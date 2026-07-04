@@ -27,3 +27,7 @@ Pillow==11.1.0
 # ── OCR (optional — screenshot email analysis) ────────
 # pytesseract==0.3.13
 # Install Tesseract separately: winget install UB-Mannheim.TesseractOCR
+
+# ── Production Server ────────────────────────────────────
+gunicorn==23.0.0           # Production WSGI server
+python-dotenv==1.0.1        # Load .env in development
