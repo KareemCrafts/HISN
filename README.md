@@ -1,11 +1,10 @@
 <div align="center">
 
-<img src="docs/screenshots/banner.png" alt="HISN Banner" width="100%"/>
+<img width="915" height="238" alt="image" src="https://github.com/user-attachments/assets/afbdb45e-6af9-4d98-85f6-c91b8717455d" />
 
 <br/>
 
-<img src=<img width="2559" height="1395" alt="image" src="https://github.com/user-attachments/assets/ec25f78d-5739-488b-a34c-2f6d3fec8612" />
- />
+
 <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask" />
 <img src="https://img.shields.io/badge/Sigma-2527%20Rules-FF6B35?style=for-the-badge" />
