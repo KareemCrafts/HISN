@@ -36,11 +36,14 @@ phishing email analysis, and document triage built in.
 <br/><sub>Incident Investigation</sub></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/phishing.png" alt="Phishing"/><br/><sub>Phishing Analysis</sub></td>
-<td><img src="docs/screenshots/documents.png" alt="Documents"/><br/><sub>Document Triage</sub></td>
+<td><img width="2542" height="1409" alt="image" src="https://github.com/user-attachments/assets/02549ac1-8e5c-443c-bb35-031096479dfc" />
+<br/><sub>Phishing Analysis</sub></td>
+<td><img width="2518" height="1393" alt="image" src="https://github.com/user-attachments/assets/dd694ae4-8d9d-4cfe-b57d-24c49f1d0509" />
+<br/><sub>Document Triage</sub></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/mitre.png" alt="MITRE ATT&CK"/><br/><sub>MITRE ATT&CK Heatmap</sub></td>
+<td><img width="2525" height="743" alt="image" src="https://github.com/user-attachments/assets/c5164fed-eea8-43e3-9c04-73478951a311" />
+<br/><sub>MITRE ATT&CK Heatmap</sub></td>
 <td><img width="531" height="742" alt="Screenshot 2026-07-31 144639" src="https://github.com/user-attachments/assets/4f5df8a0-23c7-4bb7-ae44-c4307db85767" />
 <br/><sub>Hisn AI Assistant</sub></td>
 </tr>
