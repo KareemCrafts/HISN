@@ -292,7 +292,7 @@ MIT License — see [LICENSE](LICENSE).
 ## Author
 
 **Kareem Alshaer** — Cybersecurity student, Blue Team practitioner  
-[GitHub](https://github.com/KareemCrafts) · [LinkedIn](https://linkedin.com/in/kareemalshaer)
+[GitHub](https://github.com/KareemCrafts) · [LinkedIn](https://www.linkedin.com/in/kareem-alshaer-b540a8297/)
 
 ---
 
