@@ -2,16 +2,6 @@
 
 <img width="915" height="238" alt="image" src="https://github.com/user-attachments/assets/afbdb45e-6af9-4d98-85f6-c91b8717455d" />
 
-<br/>
-
-
-<img width="2540" height="1395" alt="image" src="https://github.com/user-attachments/assets/b9091b09-70a2-4bb1-8fa3-bee256967711" />
-<img width="2516" height="1372" alt="image" src="https://github.com/user-attachments/assets/6c906776-d13e-448b-9969-43fe3e8da89d" />
-<img src="https://img.shields.io/badge/Sigma-2527%20Rules-FF6B35?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Offline-100%25%20Local-7CFFB2?style=for-the-badge&labelColor=05070A" />
-<img width="531" height="742" alt="image" src="https://github.com/user-attachments/assets/a2bfa331-7732-4faa-babe-9a864ca7a2e9" />
-
-
 <h1>HISN — حصن</h1>
 <h3>Unified Threat Investigation & Analytics Tool</h3>
 <p><em>Everything your investigation needs. One workspace.</em></p>
