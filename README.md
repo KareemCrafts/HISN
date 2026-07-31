@@ -1,6 +1,7 @@
 <div align="center">
 
-<img width="915" height="238" alt="image" src="https://github.com/user-attachments/assets/afbdb45e-6af9-4d98-85f6-c91b8717455d" />
+<img width="2540" height="1395" alt="Screenshot 2026-07-31 144532" src="https://github.com/user-attachments/assets/e557fb86-ae11-4d44-a5c0-b9fa4e738c94" />
+
 
 <h1>HISN — حصن</h1>
 <h3>Unified Threat Investigation & Analytics Tool</h3>
