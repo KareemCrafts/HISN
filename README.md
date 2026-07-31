@@ -1,6 +1,7 @@
 <div align="center">
 
-<img width="2540" height="1395" alt="Screenshot 2026-07-31 144532" src="https://github.com/user-attachments/assets/e557fb86-ae11-4d44-a5c0-b9fa4e738c94" />
+<img width="1983" height="793" alt="ChatGPT Image Jul 31, 2026, 02_54_50 PM" src="https://github.com/user-attachments/assets/b9069959-f11f-489a-b2c3-64b1a2a18f8e" />
+
 
 
 <h1>HISN — حصن</h1>
