@@ -30,8 +30,10 @@ phishing email analysis, and document triage built in.
 
 <table>
 <tr>
-<td><img src="docs/screenshots/dashboard.png" alt="Dashboard"/><br/><sub>Main Dashboard</sub></td>
-<td><img src="docs/screenshots/incidents.png" alt="Incidents"/><br/><sub>Incident Investigation</sub></td>
+<td><img width="2540" height="1395" alt="Screenshot 2026-07-31 144532" src="https://github.com/user-attachments/assets/a3e92f58-1a6c-464f-ab9d-2303d72fa4c3" />
+<br/><sub>Main Dashboard</sub></td>
+<td><img width="2516" height="1372" alt="Screenshot 2026-07-31 144703" src="https://github.com/user-attachments/assets/c1d6957c-ada0-4273-bed8-99c4db09a960" />
+<br/><sub>Incident Investigation</sub></td>
 </tr>
 <tr>
 <td><img src="docs/screenshots/phishing.png" alt="Phishing"/><br/><sub>Phishing Analysis</sub></td>
@@ -39,7 +41,8 @@ phishing email analysis, and document triage built in.
 </tr>
 <tr>
 <td><img src="docs/screenshots/mitre.png" alt="MITRE ATT&CK"/><br/><sub>MITRE ATT&CK Heatmap</sub></td>
-<td><img src="docs/screenshots/ai.png" alt="Hisn AI"/><br/><sub>Hisn AI Assistant</sub></td>
+<td><img width="531" height="742" alt="Screenshot 2026-07-31 144639" src="https://github.com/user-attachments/assets/4f5df8a0-23c7-4bb7-ae44-c4307db85767" />
+<br/><sub>Hisn AI Assistant</sub></td>
 </tr>
 </table>
 
